@@ -2,6 +2,6 @@
 .title {
   color: red;
   font-size: 32px;
-  display: block;
+  /* display: block; */
   text-align: center;
 } 
