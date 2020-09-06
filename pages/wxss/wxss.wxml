@@ -1,0 +1,12 @@
+<!-- 1.设置样式放入三种方式 -->
+
+<!-- 页内 -->
+<view class="box">哈哈哈</view>
+<!-- 行内 -->
+<view style="width: 100px; height: 100px; background-color: red">哈哈哈</view>
+<!-- 全局 -->
+<view class="container">哈哈哈</view>
+
+<!-- 2.wxss中的单位: rpx -->
+<view class="box1">px</view>
+<view class="box2">rpx</view>

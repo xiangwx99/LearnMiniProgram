@@ -1,11 +1,11 @@
-// pages/about/about.js
+// pages/wxss/wxss.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+
   },
 
   /**

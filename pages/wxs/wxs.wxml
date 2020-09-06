@@ -1,0 +1,24 @@
+<!-- 1.错误的写法 -->
+<!-- <view>{{2.255555555.toFixed(2)}}</view> -->
+
+<!-- 2.wxs的定义方式 -->
+<!-- 必须加module, 且导出 -->
+<wxs module="info">
+  // 导入外部的wsx文件的方式
+  // <wxs src="相对路径" module="info" />
+  // JS代码, 不支持es6
+  var message = "hello coderwhh"; 
+  var sum = function(num1, num2) {
+    return num1 + num2
+  }
+  module.exports = {
+    message: message,
+    sum: sum
+  }
+</wxs>
+<!-- 必须加info -->
+<view>{{info.message}}</view>
+<view>{{info.sum(10, 10)}}</view>
+<view>{{price}}</view>
+<wxs src="../../wxs/format.wxs" module="format"/>
+<view>{{format.priceFormat(price)}}</view>

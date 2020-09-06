@@ -1,0 +1,44 @@
+<!-- 1.wxml格式 -->
+<view></view>
+<!-- 无div, span -->
+<!-- 属性区分大小写 -->
+
+<!-- 2.Mustache -->
+<view>{{message}}</view>
+<view>{{time}}</view>
+
+<!-- 3.wx:if - wx:elif - wx:else -->
+<view>-----------------条件判断---------------</view>
+<view wx:if="{{isShow}}">哈哈哈</view>
+
+<!-- 4.hidden属性 -->
+<!-- hidden将某个组件隐藏起来时, 该组件是存在的(display: none) -->
+<!-- wx:if -> 决定组件要不要创建出来 -->
+<view hidden="{{false}}">嘿嘿嘿</view>
+
+<!-- 5.wx:for -> 列表渲染 -->
+<view>-----------------列表渲染---------------</view>
+<!-- 5.1: 遍历数组 -->
+<!-- <view wx:for="{{['a', 'b', 'c']}}">{{item}} {{index}}</view>
+<view wx:for="abc">{{item}} {{index}}</view>
+<view wx:for="{{3}}">{{item}} {{index}}</view> -->
+
+<!-- 5.2: block标签 -->
+
+<!-- 5.3: 取别名:一般多层遍历才使用 -->
+<view wx:for="{{movies}}" wx:for-item="movie" wx:key="index">{{movie}}</view>
+
+<!-- 6.模板: template -->
+<view>-----------------templates---------------</view>
+<!-- 模板中包裹的内容在使用之前是不会渲染的 -->
+<!-- 导入模板 -->
+<!-- <import src="路径" /> -->
+<!-- include不可以导入模板, 可以将公共的wxml的组件抽取到一个文件中 -->
+<template name="contentItem">
+  <button size="mini">按钮</button>
+  <view>{{content}}</view>
+</template>
+<template is="contentItem" data="{{content: '哈哈哈'}}"/>
+<template is="contentItem" data="{{content: '猪八戒'}}"/>
+<template is="contentItem" data="{{content: '孙悟空'}}"/>
+
