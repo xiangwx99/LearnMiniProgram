@@ -1,18 +1,35 @@
 // pages/about/about.js
-Page({
+// getApp()获取App()产生的实例对象
+const app = getApp()
+console.log(app.globalData.name);
+console.log(app.globalData.age);
 
+Page({
+  handleGetUserInfo(event) {
+    console.log(event);
+    
+  },
   /**
    * 页面的初始数据
    */
   data: {
-
+    banner: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.request({
+      url: 'http://152.136.185.210:8000/api/z8/home/multidata',
+      success: (res) => {
+        console.log(res);
+        const banners = res.data.data.banner
+        this.setData({
+          banner: banners
+        })
+      }
+    })
   },
 
   /**
