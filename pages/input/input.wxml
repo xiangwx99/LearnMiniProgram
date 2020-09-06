@@ -1,0 +1,13 @@
+<!-- 1.input的基本使用 -->
+<input />
+
+<!-- 2.value: input中的默认值 -->
+<input value="value" />
+
+<!-- 3.type：决定键盘类型（英文字母 + 其他符号 + 数字 + 身份证） -->
+
+<!-- 4.password： 暗文 -->
+<input password />
+
+<!-- 5.input绑定事件 -->
+<input bindfocus="handleFocus" />

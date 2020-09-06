@@ -1,0 +1,11 @@
+/* pages/view/view.wxss */
+.box {
+  background: red;
+  color: aliceblue;
+}
+
+.box1 {
+  background: skyblue;
+  width: 100%;
+  height: 20px;
+}

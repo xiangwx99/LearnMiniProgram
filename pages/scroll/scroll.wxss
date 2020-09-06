@@ -1,0 +1,27 @@
+/* pages/scroll/scroll.wxss */
+.container {
+  background-color: pink;
+  /* 必须设置不换行 */
+  white-space: nowrap;
+}
+
+.item1 {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: skyblue;
+  margin: 10px;
+}
+
+.container2 {
+  margin-top: 20px;
+  background-color: orange;
+  /* 必须设置有固定的高度 */
+  height: 200px;
+}
+
+.item2 {
+  height: 100px;
+  background-color: skyblue;
+  margin: 10px;
+}
