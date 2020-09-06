@@ -1,3 +1,39 @@
-<!--pages/home/home.wxml-->
-<text class="title">Hello World!</text>
-<button size="mini">按钮</button>
+<!-- 1.事件处理回顾 -->
+<button bindtap="handleClick" size="mini">按钮</button>
+<button bind:tap="handleClick" size="mini">按钮</button>
+<button catch:tap="handleClick" size="mini">按钮</button>
+
+<!-- 2.常见的一些事件 -->
+<view class="box"
+      bind:touchstart="handleTouchStart"
+      bind:touchmove="handleTouchMove"
+      bind:touchend="handleTouchEnd"
+      bind:tap="handleTap"
+      bind:longpress="handleLongpress">
+</view>
+
+<!-- 3.事件对象的分析 -->
+<button size="mini" bindtap="handleEventClick">按事件对象</button>
+
+<!-- 4.参数传递 -->
+<view class="container">
+<block  wx:for="{{movies}}" wx:key="index">
+  <view bindtap="handleItemClick" 
+        class="item"
+        data-index="{{index}}"
+        data-item="{{item}}">
+    {{item}}
+  </view>
+</block>
+</view>
+
+<!-- 5.事件冒泡和事件捕获 -->
+<!-- bind: 一层层传递 -->
+<!-- catch： 阻止事件的进一步传递 -->
+<view class="view1" capture-bind:tap="handleCaptureView1" bindtap="handleCaptureView1">
+  <view class="view2"
+  capture-bind:tap="handleCaptureView2" bindtap="handleCaptureView2"> 
+    <view class="view3"
+    capture-bind:tap="handleCaptureView3" bindtap="handleCaptureView3"></view>
+  </view>
+</view>
